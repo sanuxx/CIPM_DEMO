@@ -11,14 +11,9 @@ import { Badge, Button, Modal } from './ui'
 
 export function Logo({ light, className }: { light?: boolean; className?: string }) {
   return (
-    <Link to="/" className={cn('flex items-center gap-2.5', className)}>
-      <span className={cn('flex size-9 items-center justify-center rounded-xl', light ? 'bg-white text-navy-900' : 'bg-navy-800 text-white')}>
-        <GraduationCap className="size-5" />
-      </span>
-      <span className="leading-tight">
-        <span className={cn('block text-base font-bold tracking-tight', light ? 'text-white' : 'text-navy-900')}>CIPM</span>
-        <span className={cn('block text-[10px] font-medium uppercase tracking-[0.14em]', light ? 'text-navy-200' : 'text-muted')}>Learning Portal</span>
-      </span>
+    <Link to="/" className={cn('flex items-center gap-3', className)} aria-label="CIPM Learning Portal">
+      <img src={`${import.meta.env.BASE_URL}cipm-logo.svg`} alt="CIPM" className={cn('h-10 w-auto', light && 'rounded-md bg-white p-1')} />
+      <span className={cn('border-l pl-3 text-[10px] font-medium uppercase leading-tight tracking-[0.14em]', light ? 'border-white/30 text-navy-200' : 'border-line text-muted')}>Learning<br />Portal</span>
     </Link>
   )
 }
