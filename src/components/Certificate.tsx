@@ -47,8 +47,7 @@ export const CertificateView = forwardRef<SVGSVGElement, { data: CertificateData
       <rect x="44" y="44" width="1112" height="762" fill="none" stroke="#d97706" strokeWidth="1.5" />
       <rect x="28" y="28" width="1144" height="150" fill="#12264a" />
       <image href={EARROW_LOGO_DATA_URI} x="70" y="85" width={40 * EARROW_LOGO_RATIO} height="40" />
-      <text x="290" y="98" fill="#ffffff" fontSize="40" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="3">CIPM</text>
-      <text x="290" y="128" fill="#b9cde9" fontSize="15" fontFamily="Arial, sans-serif" letterSpacing="4">LEARNING PORTAL · DEMO</text>
+      <text x="290" y="112" fill="#b9cde9" fontSize="15" fontFamily="Arial, sans-serif" letterSpacing="4">LEARNING PORTAL · DEMO</text>
       <text x="600" y="270" textAnchor="middle" fill="#d97706" fontSize="20" letterSpacing="8" fontFamily="Arial, sans-serif">CERTIFICATE OF COMPLETION</text>
       <text x="600" y="335" textAnchor="middle" fill="#475569" fontSize="22" fontStyle="italic">This is to certify that</text>
       <text x="600" y="425" textAnchor="middle" fill="#12264a" fontSize={data.studentName.length > 28 ? 52 : 66} fontWeight="700">{data.studentName}</text>
@@ -66,7 +65,7 @@ export const CertificateView = forwardRef<SVGSVGElement, { data: CertificateData
       <g transform="translate(470 640)" fontFamily="Arial, sans-serif" textAnchor="middle">
         <circle cx="130" cy="52" r="48" fill="#fff7ed" stroke="#d97706" strokeWidth="3" />
         <circle cx="130" cy="52" r="39" fill="none" stroke="#d97706" strokeWidth="1" strokeDasharray="3 3" />
-        <text x="130" y="49" fill="#b45309" fontSize="13" fontWeight="700" letterSpacing="2">CIPM</text>
+        <text x="130" y="49" fill="#b45309" fontSize="13" fontWeight="700" letterSpacing="2">eARROW</text>
         <text x="130" y="66" fill="#b45309" fontSize="10" letterSpacing="2">VERIFIED</text>
         <text x="130" y="124" fill="#475569" fontSize="14">Issued {formatLongDate(data.issuedAt)}</text>
         <text x="130" y="144" fill="#12264a" fontSize="14" fontWeight="700">No. {data.number}</text>
