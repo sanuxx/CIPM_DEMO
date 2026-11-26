@@ -27,7 +27,7 @@ function upsert<T extends { id: string }>(list: T[], item: T) {
 export function login(email: string, password: string): Result<User> {
   const user = getDB().users.find((u) => u.email.toLowerCase() === email.trim().toLowerCase())
   if (!user || user.password !== password) return fail('Incorrect email or password.')
-  if (user.status !== 'active') return fail('This account has been deactivated. Please contact CIPM administration.')
+  if (user.status !== 'active') return fail('This account has been deactivated. Please contact eArrow administration.')
   mutate((d) => {
     d.session.userId = user.id
     const u = d.users.find((x) => x.id === user.id) as User
@@ -113,7 +113,7 @@ export function processPayment(req: PaymentRequest): Payment {
       {
         userId: req.userId, courseId: req.courseId, intakeId: req.intakeId, amount: course.fee, method: req.method,
         cardLast4: req.cardLast4, status,
-        note: status === 'failed' ? 'Card declined by issuing bank (simulated)' : status === 'pending' ? 'Bank transfer — awaiting verification by CIPM (simulated)' : undefined,
+        note: status === 'failed' ? 'Card declined by issuing bank (simulated)' : status === 'pending' ? 'Bank transfer — awaiting verification by eArrow (simulated)' : undefined,
       },
       now(),
     )

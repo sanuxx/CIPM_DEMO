@@ -18,7 +18,7 @@ export default function Announcements() {
 
   return (
     <>
-      <PageHeader title="Announcements" description="News from CIPM and updates about your enrollment." actions={unread.length > 0 ? <Button variant="outline" onClick={() => markRead(user.id, unread.map((f) => f.id))}>Mark all as read</Button> : undefined} />
+      <PageHeader title="Announcements" description="News from eArrow and updates about your enrollment." actions={unread.length > 0 ? <Button variant="outline" onClick={() => markRead(user.id, unread.map((f) => f.id))}>Mark all as read</Button> : undefined} />
       <div className="space-y-3">
         {feed.map((f) => {
           const Icon = ICONS[f.category]

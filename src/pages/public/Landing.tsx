@@ -139,7 +139,7 @@ export default function Landing() {
       )}
       <footer className="border-t border-line py-8 text-center text-xs text-muted">
         <GraduationCap className="mx-auto mb-2 size-5 text-navy-600" />
-        CIPM Learning Portal — interactive demo. All names, content and payments are fictional or simulated.
+        eArrow Learning Portal — interactive demo. All names, content and payments are fictional or simulated.
       </footer>
     </div>
   )

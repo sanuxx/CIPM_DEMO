@@ -11,7 +11,7 @@ export interface CertificateData {
   signatoryTitle: string
 }
 
-export const verifyUrl = (number: string) => `verify.cipm.example/certificate/${encodeURIComponent(number)}`
+export const verifyUrl = (number: string) => `verify.earrow.example/certificate/${encodeURIComponent(number)}`
 
 /** Deterministic QR-style matrix (visual placeholder — not a scannable QR code). */
 function qrCells(seed: string, n = 25) {
@@ -54,7 +54,7 @@ export const CertificateView = forwardRef<SVGSVGElement, { data: CertificateData
       <line x1="300" y1="448" x2="900" y2="448" stroke="#cbd5e1" strokeWidth="1.5" />
       <text x="600" y="500" textAnchor="middle" fill="#475569" fontSize="22" fontStyle="italic">has successfully completed all eight modules of the programme</text>
       <text x="600" y="565" textAnchor="middle" fill="#12264a" fontSize={data.courseTitle.length > 40 ? 34 : 40} fontWeight="700">{data.courseTitle}</text>
-      <text x="600" y="605" textAnchor="middle" fill="#64748b" fontSize="15" fontFamily="Arial, sans-serif">Demonstration certificate — issued by the CIPM LMS demo, not an official qualification.</text>
+      <text x="600" y="605" textAnchor="middle" fill="#64748b" fontSize="15" fontFamily="Arial, sans-serif">Demonstration certificate — issued by the eArrow LMS demo, not an official qualification.</text>
 
       <g transform="translate(110 650)">
         <text x="0" y="52" fill="#12264a" fontSize="30" fontStyle="italic">{data.signatoryName}</text>

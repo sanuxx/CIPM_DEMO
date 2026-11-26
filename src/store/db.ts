@@ -9,8 +9,8 @@ import { useSyncExternalStore } from 'react'
 import type { DB, User } from '@/types'
 import { createSeed, DB_VERSION } from '@/data/seed'
 
-const KEY = 'cipm-lms-demo-db'
-const SESSION_KEY = 'cipm-lms-demo-session'
+const KEY = 'earrow-lms-demo-db'
+const SESSION_KEY = 'earrow-lms-demo-session'
 
 function load(): DB {
   try {

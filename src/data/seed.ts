@@ -11,10 +11,10 @@ export const DB_VERSION = 3
 export const COURSE_ID = 'course-chrm'
 
 export const DEMO_ACCOUNTS = {
-  fresh: { email: 'ishara.madushan@cipmdemo.example', password: 'Demo@123', name: 'Ishara Madushan' },
-  active: { email: 'kasun.perera@cipmdemo.example', password: 'Demo@123', name: 'Kasun Perera' },
-  completed: { email: 'dilini.wickramasinghe@cipmdemo.example', password: 'Demo@123', name: 'Dilini Wickramasinghe' },
-  admin: { email: 'admin@cipmdemo.example', password: 'Admin@123', name: 'Anoma Weerasinghe' },
+  fresh: { email: 'ishara.madushan@earrowdemo.example', password: 'Demo@123', name: 'Ishara Madushan' },
+  active: { email: 'kasun.perera@earrowdemo.example', password: 'Demo@123', name: 'Kasun Perera' },
+  completed: { email: 'dilini.wickramasinghe@earrowdemo.example', password: 'Demo@123', name: 'Dilini Wickramasinghe' },
+  admin: { email: 'admin@earrowdemo.example', password: 'Admin@123', name: 'Anoma Weerasinghe' },
 } as const
 
 function mulberry32(seed: number) {
@@ -37,7 +37,7 @@ export function defaultSettings(): Settings {
     video: { watermark: true, protectedPlayback: true, restrictForwardSeek: false, allowSpeedControl: true, requiredWatchPercent: 90 },
     certificate: {
       autoIssue: true,
-      numberPrefix: 'CIPM',
+      numberPrefix: 'EARROW',
       signatoryName: 'Dr. Ranjith Wijeratne',
       signatoryTitle: 'Director – Learning & Development (Demo)',
     },
@@ -108,7 +108,7 @@ export function buildCourseContent(nowIso: string) {
         ...ls.points.flatMap(([h, body]) => [`# ${h}`, body]),
         '# Reflection',
         'Think about an organisation you know well. Which of the ideas above does it apply effectively, and where is there room to improve? Note two practical actions you could take.',
-        'Demo study material — prepared for the CIPM LMS demonstration.',
+        'Demo study material — prepared for the eArrow LMS demonstration.',
       ].join('\n\n')
       const slides = [
         `${ls.title}\n- Module ${m}: ${ms.title}\n- Lesson ${l} of ${ms.lessons.length}`,
@@ -242,7 +242,7 @@ const STUDENTS: [string, string, number[], number, Flag][] = [
   ['Shanika Peiris', '+94 70 386 5519', [], -1, 'failed'],
 ]
 
-const emailOf = (name: string) => `${name.toLowerCase().replace(/\s+/g, '.')}@cipmdemo.example`
+const emailOf = (name: string) => `${name.toLowerCase().replace(/\s+/g, '.')}@earrowdemo.example`
 
 export function createSeed(): DB {
   const now = new Date()
@@ -368,7 +368,7 @@ export function createSeed(): DB {
   const nextIntake = upcoming[0]
   db.announcements = [
     {
-      id: 'ann-1', title: 'Welcome to the CIPM Learning Portal', category: 'general', audience: 'all', intakeIds: [], published: true,
+      id: 'ann-1', title: 'Welcome to the eArrow Learning Portal', category: 'general', audience: 'all', intakeIds: [], published: true,
       createdAt: iso(now.getTime() - 20 * DAY),
       body: 'Your course materials, recorded lectures and knowledge checks are all available here. Start with Module 1, and remember that Modules 5 to 8 can be studied at any time. If you need help, visit Help & Support.',
     },

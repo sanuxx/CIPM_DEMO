@@ -54,7 +54,7 @@ export default function Enroll() {
       <Card className="mx-auto max-w-xl">
         <EmptyState
           icon={CheckCircle2} title={enrollment.status === 'suspended' ? 'Your enrollment is suspended' : 'You are already enrolled'}
-          description={enrollment.status === 'suspended' ? 'Please contact CIPM administration to restore access to your course.' : `You are enrolled in ${course.title}.`}
+          description={enrollment.status === 'suspended' ? 'Please contact eArrow administration to restore access to your course.' : `You are enrolled in ${course.title}.`}
           action={<div className="flex gap-2">{payment && <Button variant="outline" onClick={() => setReceipt(payment)}>View receipt</Button>}<Link to="/app"><Button>Go to dashboard</Button></Link></div>}
         />
         <ReceiptModal payment={receipt} onClose={() => setReceipt(null)} />
@@ -79,7 +79,7 @@ export default function Enroll() {
     setStep(3)
     if (payment.status === 'success') toast.success('Payment successful', { description: `Reference ${payment.reference}` })
     else if (payment.status === 'failed') toast.error('Payment failed', { description: 'Your card was declined (simulated). You can try again.' })
-    else toast.info('Bank transfer submitted', { description: 'Awaiting verification by CIPM (simulated).' })
+    else toast.info('Bank transfer submitted', { description: 'Awaiting verification by eArrow (simulated).' })
   }
 
   const phaseLabels = method === 'card' ? ['Contacting payment gateway…', 'Authorising card…', 'Confirming payment…'] : ['Submitting transfer details…', 'Recording payment…']
@@ -92,7 +92,7 @@ export default function Enroll() {
       {pendingPayment && !result && (
         <div className="mt-4 flex gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
           <Clock className="mt-0.5 size-4 shrink-0" />
-          <p>You have a bank transfer ({pendingPayment.reference}) awaiting verification. Course access starts once CIPM confirms it. You can still start a new payment below.</p>
+          <p>You have a bank transfer ({pendingPayment.reference}) awaiting verification. Course access starts once eArrow confirms it. You can still start a new payment below.</p>
         </div>
       )}
 
@@ -163,7 +163,7 @@ export default function Enroll() {
                 <form onSubmit={method === 'card' ? form.handleSubmit(pay) : (e) => { e.preventDefault(); void pay(null) }} noValidate>
                   <div className="space-y-5 p-5">
                     <div className="grid gap-3 sm:grid-cols-2" role="radiogroup" aria-label="Payment method">
-                      {([['card', CreditCard, 'Credit / debit card', 'Instant confirmation'], ['bank', Banknote, 'Bank transfer', 'Verified by CIPM staff']] as const).map(([id, Icon, t, d]) => (
+                      {([['card', CreditCard, 'Credit / debit card', 'Instant confirmation'], ['bank', Banknote, 'Bank transfer', 'Verified by eArrow staff']] as const).map(([id, Icon, t, d]) => (
                         <button type="button" key={id} role="radio" aria-checked={method === id} onClick={() => setMethod(id)}
                           className={cn('flex items-center gap-3 rounded-xl border p-4 text-left', method === id ? 'border-navy-600 bg-navy-50 ring-2 ring-navy-200' : 'border-line hover:border-navy-300')}>
                           <Icon className="size-5 text-navy-700" /><span><span className="block text-sm font-medium">{t}</span><span className="text-xs text-muted">{d}</span></span>
@@ -185,7 +185,7 @@ export default function Enroll() {
                     ) : (
                       <div className="rounded-xl bg-slate-50 p-4 text-sm leading-relaxed text-slate-700">
                         <p className="font-medium">Transfer {formatLKR(course.fee)} to:</p>
-                        <p className="mt-2">Account name: CIPM Learning (Demo)<br />Bank: Demo Bank PLC · Branch: Colombo 03<br />Account no.: 0000 1234 5678</p>
+                        <p className="mt-2">Account name: eArrow Learning (Demo)<br />Bank: Demo Bank PLC · Branch: Colombo 03<br />Account no.: 0000 1234 5678</p>
                         <p className="mt-3 text-xs text-muted">Your payment will be recorded as <strong>Pending</strong> until an administrator verifies it. This is simulated — no transfer is needed.</p>
                       </div>
                     )}

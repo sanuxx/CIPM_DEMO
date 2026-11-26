@@ -36,13 +36,13 @@ export function ensureProgress(d: DB, userId: string, lessonId: string, at: stri
 export function nextStudentNo(d: DB, at: string) {
   const year = new Date(at).getFullYear()
   const n = d.users.filter((u) => u.role === 'student').length + 1
-  return `CIPM/${year}/${String(n).padStart(4, '0')}`
+  return `EARROW/${year}/${String(n).padStart(4, '0')}`
 }
 
 export function makePaymentReference(at: string, seq: number) {
   const dt = new Date(at)
   const ymd = `${dt.getFullYear()}${String(dt.getMonth() + 1).padStart(2, '0')}${String(dt.getDate()).padStart(2, '0')}`
-  return `CIPM-PAY-${ymd}-${String(10000 + ((seq * 7919) % 90000))}`
+  return `EARROW-PAY-${ymd}-${String(10000 + ((seq * 7919) % 90000))}`
 }
 
 export function addMonthsIso(iso: string, months: number) {

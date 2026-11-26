@@ -13,7 +13,7 @@ const FAQ: [string, string][] = [
   ['Is there a pass mark for quizzes?', 'No. Any submitted quiz attempt counts as completion. You can retake a quiz until you reach the attempt limit shown on the quiz page.'],
   ['Can I download the learning materials?', 'Documents marked as downloadable have a download button. In this demo, downloads are plain-text summaries of the sample files.'],
   ['When do I get my certificate?', 'Your certificate is generated automatically once all eight modules are complete. You can preview, download and print it under My Certificates.'],
-  ['How long do I have access?', 'Course access runs for the period shown on your dashboard (set by CIPM administration, 12 months by default in this demo).'],
+  ['How long do I have access?', 'Course access runs for the period shown on your dashboard (set by eArrow administration, 12 months by default in this demo).'],
 ]
 const schema = z.object({ subject: z.string().trim().min(5, 'Enter a short subject'), message: z.string().trim().min(15, 'Please describe your question in a little more detail') })
 
@@ -47,7 +47,7 @@ export default function Help() {
             </form>
           </Card>
           <Card className="space-y-3 p-5 text-sm">
-            <p className="flex items-center gap-3"><Mail className="size-4 text-navy-600" />support@cipmdemo.example</p>
+            <p className="flex items-center gap-3"><Mail className="size-4 text-navy-600" />support@earrowdemo.example</p>
             <p className="flex items-center gap-3"><Phone className="size-4 text-navy-600" />+94 11 258 9000 · Mon–Fri, 8.30 a.m. – 5.00 p.m.</p>
           </Card>
         </div>

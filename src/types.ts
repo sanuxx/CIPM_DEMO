@@ -4,7 +4,7 @@ export type AccountStatus = 'active' | 'inactive'
 export interface User {
   id: string
   role: Role
-  /** e.g. CIPM/2026/0012 — students only */
+  /** e.g. EARROW/2026/0012 — students only */
   studentNo?: string
   name: string
   email: string

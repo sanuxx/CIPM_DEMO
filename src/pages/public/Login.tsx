@@ -59,7 +59,7 @@ export default function Login() {
         <Button type="submit" className="w-full" loading={isSubmitting || busy === 'form'}>Sign in</Button>
       </form>
       <p className="mt-4 text-center text-sm text-muted">
-        New to CIPM? <Link to="/register" className="font-medium text-navy-700 hover:underline">Create a student account</Link>
+        New to eArrow? <Link to="/register" className="font-medium text-navy-700 hover:underline">Create a student account</Link>
       </p>
 
       <Card className="mt-8 border-dashed p-5">

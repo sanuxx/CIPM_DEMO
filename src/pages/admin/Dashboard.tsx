@@ -18,7 +18,7 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <PageHeader title="Dashboard" description="A live overview of the CIPM learning portal. Charts update as demo data changes." />
+      <PageHeader title="Dashboard" description="A live overview of the eArrow learning portal. Charts update as demo data changes." />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <StatCard label="Total students" value={s.students} icon={Users} />
         <StatCard label="Active enrollments" value={s.activeEnrollments} icon={UserCheck} tone="blue" />

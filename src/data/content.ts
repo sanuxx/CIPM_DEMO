@@ -1,6 +1,6 @@
 /**
- * Fictional demo course content for the CIPM LMS demo.
- * Written for demonstration purposes only — not official CIPM curriculum or legal advice.
+ * Fictional demo course content for the eArrow LMS demo.
+ * Written for demonstration purposes only — not official eArrow curriculum or legal advice.
  */
 import type { Progression } from '@/types'
 
@@ -34,7 +34,7 @@ const blank = (q: string, a: string[], e: string): QSeed => ({ k: 'blank', q, a,
 export const COURSE_SEED = {
   code: 'CHRM',
   title: 'Certificate in Human Resource Management',
-  subtitle: 'CIPM Professional Programme · Demo Course',
+  subtitle: 'eArrow Professional Programme · Demo Course',
   description:
     'A practical foundation programme for early-career HR practitioners and line managers. Across eight modules you will build a working knowledge of the employee life cycle, Sri Lankan labour law essentials, HR analytics, workplace wellbeing and professional practice. Modules 1–4 build on each other and are completed in sequence; Modules 5–8 are stand-alone and can be studied at any time. This is fictional demonstration content prepared for the LMS demo.',
   level: 'Foundation',
