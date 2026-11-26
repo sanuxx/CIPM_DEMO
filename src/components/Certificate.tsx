@@ -1,4 +1,4 @@
-import { CIPM_LOGO_INNER, CIPM_LOGO_VIEWBOX } from '@/data/cipmLogo'
+import { EARROW_LOGO_DATA_URI, EARROW_LOGO_RATIO } from '@/data/earrowLogo'
 import { forwardRef } from 'react'
 import { hashString, formatLongDate } from '@/lib/utils'
 
@@ -46,10 +46,9 @@ export const CertificateView = forwardRef<SVGSVGElement, { data: CertificateData
       <rect x="28" y="28" width="1144" height="794" fill="none" stroke="#12264a" strokeWidth="6" />
       <rect x="44" y="44" width="1112" height="762" fill="none" stroke="#d97706" strokeWidth="1.5" />
       <rect x="28" y="28" width="1144" height="150" fill="#12264a" />
-      <rect x="70" y="58" width="150" height="90" rx="10" fill="#ffffff" />
-      <svg x="80" y="64" width="130" height="78" viewBox={CIPM_LOGO_VIEWBOX} dangerouslySetInnerHTML={{ __html: CIPM_LOGO_INNER }} />
-      <text x="245" y="98" fill="#ffffff" fontSize="40" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="3">CIPM</text>
-      <text x="245" y="128" fill="#b9cde9" fontSize="15" fontFamily="Arial, sans-serif" letterSpacing="4">LEARNING PORTAL · DEMO</text>
+      <image href={EARROW_LOGO_DATA_URI} x="70" y="85" width={40 * EARROW_LOGO_RATIO} height="40" />
+      <text x="290" y="98" fill="#ffffff" fontSize="40" fontWeight="700" fontFamily="Arial, sans-serif" letterSpacing="3">CIPM</text>
+      <text x="290" y="128" fill="#b9cde9" fontSize="15" fontFamily="Arial, sans-serif" letterSpacing="4">LEARNING PORTAL · DEMO</text>
       <text x="600" y="270" textAnchor="middle" fill="#d97706" fontSize="20" letterSpacing="8" fontFamily="Arial, sans-serif">CERTIFICATE OF COMPLETION</text>
       <text x="600" y="335" textAnchor="middle" fill="#475569" fontSize="22" fontStyle="italic">This is to certify that</text>
       <text x="600" y="425" textAnchor="middle" fill="#12264a" fontSize={data.studentName.length > 28 ? 52 : 66} fontWeight="700">{data.studentName}</text>

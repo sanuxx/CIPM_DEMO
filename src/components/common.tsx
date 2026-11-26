@@ -12,7 +12,7 @@ import { Badge, Button, Modal } from './ui'
 export function Logo({ light, className }: { light?: boolean; className?: string }) {
   return (
     <Link to="/" className={cn('flex items-center gap-3', className)} aria-label="CIPM Learning Portal">
-      <img src={`${import.meta.env.BASE_URL}cipm-logo.svg`} alt="CIPM" className={cn('h-10 w-auto', light && 'rounded-md bg-white p-1')} />
+      <img src={`${import.meta.env.BASE_URL}earrow-logo-white.png`} alt="eArrow" className="h-10 w-auto rounded-md bg-navy-900 px-2.5 py-1.5" />
       <span className={cn('border-l pl-3 text-[10px] font-medium uppercase leading-tight tracking-[0.14em]', light ? 'border-white/30 text-navy-200' : 'border-line text-muted')}>Learning<br />Portal</span>
     </Link>
   )
