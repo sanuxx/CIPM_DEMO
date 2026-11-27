@@ -46,4 +46,4 @@ Open the admin and student portals in two tabs: each tab keeps its own signed-in
 
 ## Live demo
 
-Published with GitHub Pages: https://sanuxx.github.io/CIPM_DEMO/ (auto-deployed from `main` by `.github/workflows/deploy.yml`).
+Published with GitHub Pages: https://sanuxx.github.io/eArrow-LMS_DEMO/ (auto-deployed from `main` by `.github/workflows/deploy.yml`).
